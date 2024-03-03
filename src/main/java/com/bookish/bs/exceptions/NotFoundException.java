@@ -1,4 +1,4 @@
 package com.bookish.bs.exceptions;
 
-public class NotFoundException {
+public class NotFoundException extends Exception{
 }
