@@ -1,4 +1,5 @@
 package com.bookish.bs.enums;
 
-public class BookGenre {
+public enum BookGenre {
+    MYSTERY
 }

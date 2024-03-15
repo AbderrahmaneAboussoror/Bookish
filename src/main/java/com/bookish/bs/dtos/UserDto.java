@@ -32,7 +32,7 @@ public class UserDto {
     @NotNull(message = "The password cannot be null!")
     @NotEmpty(message = "The password cannot be empty!")
     private String password;
-    private Role role;
+    private String role;
     private List<RequestUserBookDto> userBooks;
     private List<RequestMessageDto> messages;
     private List<RequestReviewDto> reviews;

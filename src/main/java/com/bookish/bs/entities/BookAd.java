@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 public class BookAd {
     @EmbeddedId
     private BookAdId bookAdId;
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("bookId")
     private Book book;
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("adId")
     private Ad ad;
 }
