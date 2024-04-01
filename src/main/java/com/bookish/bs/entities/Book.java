@@ -23,6 +23,8 @@ public class Book {
     private String title;
     @Column(nullable = false)
     private String author;
+    @Column(nullable = false)
+    private String description;
     @Enumerated(EnumType.STRING)
     private BookGenre genre;
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

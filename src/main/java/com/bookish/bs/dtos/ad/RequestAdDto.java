@@ -1,6 +1,5 @@
 package com.bookish.bs.dtos.ad;
 
-import com.bookish.bs.enums.AdState;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +12,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class RequestAdDto {
     private UUID id;
-    private AdState state;
+    private String state;
     private UUID userId;
 }

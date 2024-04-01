@@ -2,7 +2,6 @@ package com.bookish.bs.dtos;
 
 import com.bookish.bs.dtos.bookAd.RequestBookAdDto;
 import com.bookish.bs.dtos.userBook.RequestUserBookDto;
-import com.bookish.bs.enums.BookGenre;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -24,7 +23,7 @@ public class BookDto {
     @NotNull(message = "The author cannot be null!")
     @NotEmpty(message = "The author cannot be empty!")
     private String author;
-    private BookGenre genre;
+    private String genre;
     private List<RequestBookAdDto> bookAds;
     private List<RequestUserBookDto> userBooks;
 }

@@ -2,6 +2,7 @@ package com.bookish.bs.dtos.bookAd;
 
 import com.bookish.bs.dtos.BookDto;
 import com.bookish.bs.dtos.ad.AdDto;
+import com.bookish.bs.dtos.ad.RequestAdDto;
 import com.bookish.bs.keys.BookAdId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,5 +15,5 @@ import lombok.NoArgsConstructor;
 public class BookAdDto {
     private BookAdId id;
     private BookDto book;
-    private AdDto ad;
+    private RequestAdDto ad;
 }

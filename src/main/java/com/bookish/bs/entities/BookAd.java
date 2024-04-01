@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class BookAd {
     @EmbeddedId
-    private BookAdId bookAdId;
+    private BookAdId id;
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("bookId")
     private Book book;
