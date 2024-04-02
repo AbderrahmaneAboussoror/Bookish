@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -26,6 +27,7 @@ import static org.springframework.http.HttpStatus.OK;
 public class UserController {
     private final IUserService iUserService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public ResponseEntity<?> getAll(Pageable pageable) {
         if(iUserService.findAll(pageable).isEmpty()) {
@@ -33,18 +35,22 @@ public class UserController {
         }
         return new ResponseEntity<>(iUserService.findAll(pageable), OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> get(@PathVariable UUID id) throws NotFoundException {
         return new ResponseEntity<>(iUserService.findById(id), OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<UserDto> create(@Valid @RequestBody UserDto user) throws InvalidDataException {
         return new ResponseEntity<>(iUserService.save(user), CREATED);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<UserDto> update(@Valid @RequestBody UserDto user, @PathVariable UUID id) throws NotFoundException {
         return new ResponseEntity<>(iUserService.update(id, user), OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable UUID id) throws NotFoundException {
         if (iUserService.delete(id)) return new ResponseEntity<>("User with id "+ id +" deleted successfully", OK);

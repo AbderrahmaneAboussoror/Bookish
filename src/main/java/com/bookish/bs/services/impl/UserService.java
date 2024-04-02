@@ -42,7 +42,7 @@ public class UserService implements IUserService {
 
         user.setFirstName(object.getFirstName());
         user.setLastName(object.getLastName());
-        user.setEmail(object.getEmail());
+        user.setUsername(object.getUsername());
         user.setRole(Role.valueOf(object.getRole()));
 
         log.info("Updating user {}", user.getFirstName());

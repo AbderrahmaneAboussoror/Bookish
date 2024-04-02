@@ -28,7 +28,7 @@ public class UserDto {
     private String lastName;
     @NotNull(message = "The email cannot be null!")
     @NotEmpty(message = "The email cannot be empty!")
-    private String email;
+    private String username;
     @NotNull(message = "The password cannot be null!")
     @NotEmpty(message = "The password cannot be empty!")
     private String password;
